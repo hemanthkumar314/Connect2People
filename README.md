@@ -1,11 +1,16 @@
 # SnapGram (Social Media Application)
 
 ## Overview
-Build a modern Social Media Application with a stunning UI ,a special tech stack, an infinite scroll feature, and amazing performance using React JS, Appwrite, TypeScript, and more.
+Build a modern Social Media Application(SnapGram) with a stunning UI ,a special tech stack, an infinite explore posts scroll feature, and amazing performance using React JS, Appwrite, TypeScript, and more.
 
 ## Key Features
 - **User-Friendly Interface**: Enjoy a simple and intuitive interface by adjusting parameters to fine-tune the application, ensuring they align with your vision.
-- **Community Interaction**: Share your 
+- **User Registration and Authentication**: Users can sign up for an account and log in to access the Application.Passwords are securely hashed and stored in AppWrite Cloud Database and Auth.
+- **Home Feed Page**: The Home Feed shows posts from your friends and followed accounts. It's the main area where you can scroll through updates and interact with posts.
+- **Exploring Posts Page**: The Explore page lets you discover new content from people or topics you don't follow yet. You can browse trending posts or search for specific interests.
+- **Saved Posts Page**: The Saved Posts page contains all the posts you've bookmarked. You can easily access your favorite posts here at any time.
+- **Creating Post**: You can create and share a new post by uploading photos, videos, or text. Customize it with captions and tags, then share it with your followers.
+- **Friends Interaction**: Interact with your friends by liking, commenting, or sharing their posts. You can also send friend requests and contact them directly.
 
 ## Technologies Used
 
@@ -16,7 +21,7 @@ Build a modern Social Media Application with a stunning UI ,a special tech stack
 
 ### Back End
 - **NodeJS**: Handles server-side logic, processes user requests, and interacts with the database.
-- **AppWrite**: Stores all data related to Users (userId, Username, and hasedPassword etc..),Posts (title, images, and prompts) and Saved Posts.
+- **AppWrite**: Stores all data related to Users (userId, Username, and hasedPassword etc..),Posts (title, images, and prompts) and Saves.
 
 
 ## Getting Started
