@@ -35,13 +35,13 @@ Build a modern Social Media Application with a stunning UI ,a special tech stack
 3. Create a `.env` file in the root directory with the following environment variables:
 
    ```env
-  VITE_APPWRITE_PROJECT_ID=Your_Appwrite_Project_URL
-  VITE_APPWRITE_URL=Your_Appwrite_URL
-  VITE_APPWRITE_STORAGE_ID=Your_Appwrite_Storage_URL
-  VITE_APPWRITE_DATABASE_ID=Your_Appwrite_Database_URL
-  VITE_APPWRITE_POST_COLLECTION_ID=Your_Appwrite_Database_Post_Collection_URL
-  VITE_APPWRITE_USER_COLLECTION_ID=Your_Appwrite_Database_user_Collection_URL
-  VITE_APPWRITE_SAVES_COLLECTION_ID=Your_Appwrite_Database_Saves_Collection_URL
+     VITE_APPWRITE_PROJECT_ID=Your_Appwrite_Project_URL
+     VITE_APPWRITE_URL=Your_Appwrite_URL
+     VITE_APPWRITE_STORAGE_ID=Your_Appwrite_Storage_URL
+     VITE_APPWRITE_DATABASE_ID=Your_Appwrite_Database_URL
+     VITE_APPWRITE_POST_COLLECTION_ID=Your_Appwrite_Database_Post_Collection_URL
+     VITE_APPWRITE_USER_COLLECTION_ID=Your_Appwrite_Database_user_Collection_URL
+     VITE_APPWRITE_SAVES_COLLECTION_ID=Your_Appwrite_Database_Saves_Collection_URL
   
 
 ### Usage
