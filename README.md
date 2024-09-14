@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# SnapGram (Social Media Application)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Build a modern Social Media Application with a stunning UI ,a special tech stack, an infinite scroll feature, and amazing performance using React JS, Appwrite, TypeScript, and more.
 
-Currently, two official plugins are available:
+## Key Features
+- **User-Friendly Interface**: Enjoy a simple and intuitive interface by adjusting parameters to fine-tune the application, ensuring they align with your vision.
+- **Community Interaction**: Share your 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+### Front End
+- **Vite + ReactJS**
+- **Tailwind CSS**
+- **Shadcn UI**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Back End
+- **NodeJS**: Handles server-side logic, processes user requests, and interacts with the database.
+- **AppWrite**: Stores all data related to Users (userId, Username, and hasedPassword etc..),Posts (title, images, and prompts) and Saved Posts.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Getting Started
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Prerequisites
+- **NodeJS(Node Package Manager)**
+- **Appwrite Account**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/hemanthkumar314/Social_Media_Application.git
+   cd Social_Media_Application
+2. 
+3. Create a `.env` file in the root directory with the following environment variables:
+
+   ```env
+  VITE_APPWRITE_PROJECT_ID=Your_Appwrite_Project_URL
+  VITE_APPWRITE_URL=Your_Appwrite_URL
+  VITE_APPWRITE_STORAGE_ID=Your_Appwrite_Storage_URL
+  VITE_APPWRITE_DATABASE_ID=Your_Appwrite_Database_URL
+  VITE_APPWRITE_POST_COLLECTION_ID=Your_Appwrite_Database_Post_Collection_URL
+  VITE_APPWRITE_USER_COLLECTION_ID=Your_Appwrite_Database_user_Collection_URL
+  VITE_APPWRITE_SAVES_COLLECTION_ID=Your_Appwrite_Database_Saves_Collection_URL
+  
+
+### Usage
+
+1. Run the Frontend and navigate to ` http://localhost:5173 ` in broswer
+   
+   ```bash
+   npm run dev
+
+2. Sign up or log in using your Google Account
+3. Now, Enjoy your Social Media Application

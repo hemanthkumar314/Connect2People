@@ -60,15 +60,6 @@ const AuthProvider = ({children}:{children:React.ReactNode}) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
-    // const value={
-    //     user,
-    //     setUser,
-    //     isLoading,
-    //     isAuthenticated,
-    //     setIsAuthenticated,
-    //     checkAuthUser
-    // }
-
     const value = useMemo(() => ({
       user,
       setUser,

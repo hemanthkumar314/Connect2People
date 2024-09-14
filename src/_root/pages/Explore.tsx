@@ -29,15 +29,15 @@ const Explore = () => {
     )
   }
   const Showsearchresults = SearchValue !=='';
-  const ShowPosts = !SearchValue && 
-                    posts.pages.every((item)=>item.documents.length===0)
+  const ShowPosts = !Showsearchresults && 
+                    posts.pages.every((item)=>item.documents.length===0);
   
   return (
     <div className='explore-container'>
       
-      <div className='explor-inner_container'>
+      <div className='explore-inner_container'>
         <h2 className='w-full h3-bold md:h2-bold'>Search Posts</h2>
-        <div className='flex w-full gap-4 px-4 rounded-lg bg-dark-4'>
+        <div className='flex w-full gap-1 px-4 rounded-lg bg-dark-4'>
           <img
             src='/assets/icons/search.svg'
             alt='search'

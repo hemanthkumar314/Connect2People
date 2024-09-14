@@ -28,7 +28,7 @@ const GridPostList = ({posts,ShowUser = true,ShowStats = true}:GridPostListProps
             {ShowUser && (
               <div className="flex items-center justify-start flex-1 gap-2">
                 <img 
-                  src={post.creator.iamgeUrl}
+                  src={post.creator.imageUrl}
                   alt="creator"
                   className="w-8 h-8 rounded-full"
                 />
