@@ -21,7 +21,7 @@ Build a modern Social Media Application(SnapGram) with a stunning UI ,a special 
 
 ### Back End
 - **NodeJS**: Handles server-side logic, processes user requests, and interacts with the database.
-- **AppWrite**: Stores all data related to Users (userId, Username, and hasedPassword etc..),Posts (title, images, and prompts) and Saves.
+- **AppWrite Cloud**: Stores all data related to Users (userId, Username, and hasedPassword etc..),Posts (title, images, and prompts) and Saves.
 
 
 ## Getting Started
@@ -39,7 +39,8 @@ Build a modern Social Media Application(SnapGram) with a stunning UI ,a special 
 2. First, create an account on AppWrite Cloud to obtain your `Your_Appwrite_URL`
 3. Create a project in the Cloud to receive your `Your_Appwrite_Project_URL`.. Then, create a storage bucket to get the `Your_Appwrite_Storage_URL`, and set up a database using the and a Database with `Your_Appwrite_Project_URL`
 4. Next, create three collections in the database, namely Users, Posts, and Saves, and obtain their respective IDs.
-5. Create a `.env` file in the root directory with the following environment variables:
+5. We need to setup Attributes and build relationships between the collections to work them off.
+6. Create a `.env` file in the root directory with the following environment variables:
 
    ```env
      VITE_APPWRITE_URL=Your_Appwrite_URL
