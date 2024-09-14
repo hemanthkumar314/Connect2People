@@ -1,15 +1,33 @@
 import GridPostList from '@/components/shared/GridPostList'
+import Loader from '@/components/shared/Loader'
 import SearchResults from '@/components/shared/SearchResults'
 import { Input } from '@/components/ui/input'
-import { useSearchPosts } from '@/lib/react-query/queriesAndMutations'
-import { useState } from 'react'
+import useDebounce from '@/hooks/useDebounce'
+import { useGetPosts, useSearchPosts } from '@/lib/react-query/queriesAndMutations'
+import { useEffect, useState } from 'react'
+import { useInView } from "react-intersection-observer";
 // import React from 'react'
 
 const Explore = () => {
-  const [SearchValue, setSearchValue] = useState('')
+  const {ref,inView} = useInView();
+  const { data:posts, fetchNextPage, hasNextPage} = useGetPosts();
+  const [SearchValue, setSearchValue] = useState('');
+  const deBouncedvalue = useDebounce(SearchValue,500);
 
-  const { data:searchedPosts, isFetching:isSearchFetching } = useSearchPosts(SearchValue)
+  const { data:searchedPosts, isFetching:isSearchFetching } = useSearchPosts(deBouncedvalue);
 
+  useEffect(()=>{
+    if(inView && !SearchValue) fetchNextPage();
+  },[inView,SearchValue,fetchNextPage])
+
+  if(!posts)
+  {
+    return (
+      <div className='w-full h-full flex-center'>
+        <Loader/>
+      </div>
+    )
+  }
   const Showsearchresults = SearchValue !=='';
   const ShowPosts = !SearchValue && 
                     posts.pages.every((item)=>item.documents.length===0)
@@ -53,7 +71,10 @@ const Explore = () => {
       <div className='flex flex-wrap w-full max-w-5xl gap-4'>
         { Showsearchresults ? 
           (
-            <SearchResults/>
+            <SearchResults
+              isSearchFetching = {isSearchFetching}
+              searchedPosts={searchedPosts}
+            />
           ): ShowPosts ?
           (
             <p className='w-full mt-10 text-center text-light-4'>
@@ -64,6 +85,12 @@ const Explore = () => {
           ))
         }
       </div>
+
+      {hasNextPage && !SearchValue && (
+        <div ref={ref} className='mt-10'>
+          <Loader/>
+        </div>
+      )}
       
     </div>
   )

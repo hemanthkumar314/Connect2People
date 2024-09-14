@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { INewPost, INewUser, IUpdatePost } from '@/types'
+
+import { INewPost, INewUser, IUpdatePost, IUpdateUser } from '@/types'
 import { useQuery,useMutation,useQueryClient,useInfiniteQuery } from '@tanstack/react-query'
-import { createPost, createUserAccount, deletePost, deleteSavedPost, getCurrentUser, getInfinitePosts, getPostbyId, getRecentPosts, getSearchPosts, likePost, savePost, signInAccount, signOutAccount, UpdatePost } from '../appwrite/api'
+import { createPost, createUserAccount, deletePost, deleteSavedPost, getCurrentUser, getInfinitePosts, getPostbyId, getRecentPosts, getSearchPosts, getUserById, likePost, savePost, signInAccount, signOutAccount, UpdatePost, updateUser } from '../appwrite/api'
 import { QUERY_KEYS } from './queryKeys';
 
 export const useCreateUserAccount =()=>{
@@ -164,8 +164,31 @@ export const useGetPosts = () =>{
 
 export const useSearchPosts = (searchterm:string) =>{
     return useQuery({
-        queryKey:[QUERY_KEYS.SEARCH_POSTS],
+        queryKey:[QUERY_KEYS.SEARCH_POSTS,searchterm],
         queryFn:() => getSearchPosts(searchterm),
         enabled: !! searchterm
     })
 }
+
+export const useGetUserById = (userId: string) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.GET_USER_BY_ID, userId],
+      queryFn: () => getUserById(userId),
+      enabled: !!userId,
+    });
+};
+
+export const useUpdateUser = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (user: IUpdateUser) => updateUser(user),
+        onSuccess: (data) => {
+        queryClient.invalidateQueries({
+            queryKey: [QUERY_KEYS.GET_CURRENT_USER],
+        });
+        queryClient.invalidateQueries({
+            queryKey: [QUERY_KEYS.GET_USER_BY_ID, data?.$id],
+        });
+        },
+    });
+};
