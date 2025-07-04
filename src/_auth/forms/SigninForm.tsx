@@ -62,7 +62,7 @@ const SigninForm = () => {
         <h2 className="pt-5 h3-bold md:h2-bold sm:pt-12">Login to your account</h2>
 
         <p className="mt-2 text-light-3 small-medium md:base-regular">
-          Wlcome back,Please enter your account details
+          Welcome back,Please enter your account details
         </p>
 
       
